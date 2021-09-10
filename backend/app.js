@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 const { environment } = require('./config');
 const isProduction = environment === 'production';
 const app = express();
+const { ValidationError } = require('sequelize');
 
 app.use(morgan('dev'));
 app.use(cookieParser());
@@ -46,6 +47,17 @@ app.use((_req, _res, next) => {
   err.status = 404;
   next(err);
 });
+
+//The following error is for catching Sequelize errors and formatting them before sending the error response.
+app.use((err, _req, _res, next) => {
+  // check if error is a Sequelize error:
+  if (err instanceof ValidationError) {
+    err.errors = err.errors.map((e) => e.message);
+    err.title = 'Validation error';
+  }
+  next(err);
+});
+
 
 
 
