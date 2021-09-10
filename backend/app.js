@@ -37,4 +37,16 @@ app.use(
 
 app.use(routes); // Connect all the routes
 
+// Error Handling
+// The following error handler will catch any requests that don't match any of the routes defined and create a server error with a status code of 404.
+app.use((_req, _res, next) => {
+  const err = new Error("The requested resource couldn't be found.");
+  err.title = "Resource Not Found";
+  err.errors = ["The requested resource couldn't be found."];
+  err.status = 404;
+  next(err);
+});
+
+
+
 module.exports = app;
