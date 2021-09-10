@@ -1,5 +1,3 @@
-// User login api route
-
 const express = require('express')
 const asyncHandler = require('express-async-handler');
 const { setTokenCookie, restoreUser } = require('../../utils/auth');
@@ -7,7 +5,7 @@ const { User } = require('../../db/models');
 
 const router = express.Router();
 
-// Log in
+// User login api route
 router.post(
     '/',
     asyncHandler(async (req, res, next) => {
@@ -29,6 +27,15 @@ router.post(
         user,
       });
     }),
+);
+
+// Log out: asyncHandler wasn't used to wrap the route handler. This is because the route handler is not async.
+router.delete(
+    '/',
+    (_req, res) => {
+      res.clearCookie('token');
+      return res.json({ message: 'success' });
+    }
 );
 
 module.exports = router;
