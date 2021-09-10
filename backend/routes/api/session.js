@@ -16,6 +16,9 @@ const validateLogin = [
       .withMessage('Please provide a password.'),
     handleValidationErrors,
 ];
+
+
+
 // User login api route
 router.post(
     '/',
