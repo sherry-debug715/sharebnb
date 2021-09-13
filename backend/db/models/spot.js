@@ -2,7 +2,6 @@
 module.exports = (sequelize, DataTypes) => {
   const Spot = sequelize.define('Spot', {
     userId: DataTypes.INTEGER,
-    address: DataTypes.STRING,
     city: DataTypes.STRING,
     state: DataTypes.STRING,
     name: DataTypes.STRING,

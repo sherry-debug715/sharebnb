@@ -9,11 +9,21 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       spotId: {
-        allowNull: false,
         type: Sequelize.INTEGER
       },
-      url: {
-        allowNull: false,
+      url1: {
+        type: Sequelize.STRING
+      },
+      url2: {
+        type: Sequelize.STRING
+      },
+      url3: {
+        type: Sequelize.STRING
+      },
+      url4: {
+        type: Sequelize.STRING
+      },
+      url5: {
         type: Sequelize.STRING
       },
       createdAt: {
