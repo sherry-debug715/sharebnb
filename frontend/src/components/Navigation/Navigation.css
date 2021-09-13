@@ -1,8 +1,5 @@
 section {
     position: relative;
-    width: 100%;
-    min-height: 100vh;
-    padding: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,10 +26,19 @@ header ul {
     display: flex;
 }
 
-li {
+header ul li {
+    list-style: none;
+}
+
+a {
     display: inline-block;
     color: #333;
     font-weight: 400;
     margin-left: 40px;
     text-decoration: none;
+}
+
+.navigation button {
+    margin-left: 35px;
+    padding: 3px;
 }
