@@ -1,40 +1,37 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Users', {
+    return queryInterface.createTable('Reviews', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      username: {
+      userId: {
         allowNull: false,
-        type: Sequelize.STRING(30),
+        type: Sequelize.INTEGER,
         unique: true
       },
-      email: {
+      spotId: {
         allowNull: false,
-        type: Sequelize.STRING(150),
-        unique: true
+        type: Sequelize.INTEGER
       },
-      hashedPassword: {
+      review: {
         allowNull: false,
-        type: Sequelize.STRING.BINARY
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('now'),
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('now'),
+        type: Sequelize.DATE
       }
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Users');
+    return queryInterface.dropTable('Reviews');
   }
 };
