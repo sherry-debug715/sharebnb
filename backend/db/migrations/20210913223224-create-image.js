@@ -12,19 +12,19 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       url1: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(1000)
       },
       url2: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(1000)
       },
       url3: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(1000)
       },
       url4: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(1000)
       },
       url5: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(1000)
       },
       createdAt: {
         allowNull: false,

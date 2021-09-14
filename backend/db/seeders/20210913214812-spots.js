@@ -8,27 +8,33 @@ module.exports = {
 
       Example:
       */
-    return queryInterface.bulkInsert('Spot', [
+    return queryInterface.bulkInsert('Spots', [
       {
         userId: 1,
         city: 'Milersburg',
         state: 'Ohio',
         name: 'Charming Treehouse Getaway with Treetop Views',
-        price: 260
+        price: 260,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         userId: 2,
         city: 'Hampton',
         state: 'New Hampshire',
         name: 'OC Suites Hampton, NH',
-        price: 178
+        price: 178,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         userId: 3,
         city: 'San Diego',
         state: 'California',
         name: 'Parkview One Bedroom',
-        price: 142
+        price: 142,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
     ], {});
   },
@@ -40,6 +46,6 @@ module.exports = {
 
       Example:
       */
-      return queryInterface.bulkDelete('Spot', null, { truncate: true, cascade: true, restartIdentity: true });
+      return queryInterface.bulkDelete('Spots', null, { truncate: true, cascade: true, restartIdentity: true });
   }
 };
