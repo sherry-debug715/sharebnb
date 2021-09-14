@@ -13,10 +13,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         unique: true
       },
-      address: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
       city: {
         allowNull: false,
         type: Sequelize.STRING
