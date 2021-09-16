@@ -1,15 +1,18 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { getSpots } from '../../store/spotsDisplay';
+import { Link, useParams, useHistory } from 'react-router-dom';
+import { deleteSpot, getSpots } from '../../store/spotsDisplay';
 import './spotDetail.css';
 
 function ProductDetail() {
+
     const dispatch = useDispatch();
     const { spotId } = useParams();
     const spots = useSelector(state => {
         return state.spot.list;
     });
+
+    const history = useHistory();
 
     useEffect(() => {
         dispatch(getSpots());
@@ -18,15 +21,18 @@ function ProductDetail() {
     if (!spots) {
         return null;
     }
-    // const allSpots = [];
-    // for(let key in spots) {
-    //     allSpots.push(spots[key]);
-    // }
-    // console.log("this is spotId=========>"+ spotId);
+
+    const deleteOneSpot = e => {
+        e.preventDefault();
+        dispatch(deleteSpot(e.target.value));
+        history.push('./spots')
+    }
+
     return (
         <>
         <h1>This is Product Detail Page</h1>
         <div className="spot-detail-wrapper">
+            <button value={spotId} className="delete-button" onClick={deleteOneSpot}>delete</button>
             {spots.map(spot => {
                 // console.log("this is spot.id=========>"+ spot.id)
                 if(spotId == spot.id) {

@@ -34,8 +34,10 @@ export const deleteSpot = (spotId) => async dispatch => {
       body: JSON.stringify({spotId})
     })
     if(response.ok){
-        const allSpots = await response.json();
-        dispatch(getSpots(allSpots));
+        const {refreshedSpots, refreshedImages} = await response.json();
+        getSpots();
+        // dispatch(getSpots(refreshedSpots));
+        // dispatch(getSpots(refreshedImages));
         return 'deleted';
     }
 };
