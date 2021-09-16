@@ -43,6 +43,7 @@ export const createSpot = addSpot => async dispatch => {
     });
     if (response.ok) {
         const newSpot = await response.json();
+        console.log(newSpot);
         dispatch(addNewSpot(newSpot));
         return newSpot;
     }
@@ -69,7 +70,7 @@ const spotsReducer = (state = initialState, action) => {
         // }
         case ADD_SPOT: {
             if (!state[action.newSpot.id]) {
-              const newState = {
+              let newState = {
                 ...state,
                 [action.newSpot.id]: action.newSpot
               };

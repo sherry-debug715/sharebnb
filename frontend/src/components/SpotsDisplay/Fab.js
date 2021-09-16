@@ -3,7 +3,7 @@ import './fab.css';
 const Fab = props => {
     return (
       <div className={props.hidden ? 'fab is-hidden' : 'fab'} onClick={props.onClick}>
-        <span aria-label="add" role="img" className="fab-symbol">➕</span>
+        <button aria-label="add" role="img" className="fab-symbol">Create New Room</button>
       </div>
     );
 };

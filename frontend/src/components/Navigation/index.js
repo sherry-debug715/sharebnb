@@ -25,7 +25,7 @@ function Navigation({ isLoaded }){
   return (
     <section>
       <header>
-        <a href="/" ><img src="" class="logo"/></a>
+        <a href="/" ><img src="" className="logo"/></a>
         <ul>
           <li className="navigation">
             <NavLink exact to="/">Home</NavLink>
