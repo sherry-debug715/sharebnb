@@ -31,10 +31,10 @@ function ProductDetail() {
                 // console.log("this is spot.id=========>"+ spot.id)
                 if(spotId == spot.id) {
                     // console.log("I'm inside spot.id 1")
-                    let url2 = spot?.Images[0].url2;
-                    let url3 = spot?.Images[0].url3;
-                    let url4 = spot?.Images[0].url4;
-                    let url5 = spot?.Images[0].url5;
+                    let url2 = spot?.Images[0]?.url2;
+                    let url3 = spot?.Images[0]?.url3;
+                    let url4 = spot?.Images[0]?.url4;
+                    let url5 = spot?.Images[0]?.url5;
                     return (
                         <div>
                             <h2>{spot.name}</h2>

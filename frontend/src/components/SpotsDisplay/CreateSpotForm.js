@@ -43,23 +43,22 @@ const CreateSpotForm = ({hideForm}) => {
         e.preventDefault();
 
         let createdSpot = {
-          userId: currentUser.id,
+          userId: currentUser?.id,
           city,
           state,
           name,
           price,
-          imageUrl1,
-          imageUrl2,
-          imageUrl3,
-          imageUrl4,
-          imageUrl5
+          url1: imageUrl1,
+          url2: imageUrl2,
+          url3: imageUrl3,
+          url4: imageUrl4,
+          url5: imageUrl5
         };
 
         const newSpot = await dispatch(createSpot(createdSpot));
         // console.log("===================>"+response);
         if (newSpot) {
           return history.push(`/spots/${newSpot.id}`);
-          // hideForm();
         }
         reset();
     }

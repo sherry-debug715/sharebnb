@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { Link, Route, useParams } from 'react-router-dom';
-import { getSpots } from '../../store/spotsDisplay';
+import { deleteSpot, getSpots } from '../../store/spotsDisplay';
 import './SpotsDisplay.css';
 import Fab from './Fab';
 import CreateSpotForm from './CreateSpotForm';
@@ -24,13 +24,19 @@ const SpotsBrowser = () => {
         return null;
     }
 
+
+    const deleteOneSpot = e => {
+        e.preventDefault();
+        dispatch(deleteSpot(spotId));
+    }
+
     return (
         <>
         <main>
            <div className="spots-page">
                <Fab hidden={showForm} onClick={() => setShowForm(true)} />
                {spots.map(spot => {
-                  let url1 = spot?.Images[0].url1;
+                  let url1 = spot?.Images[0]?.url1;
                 //   console.log("url1=>------------" + url1);
                     return(
 
@@ -39,6 +45,7 @@ const SpotsBrowser = () => {
                             <div className="spot-container">
                                 <div className="imag-container">
                                     <img className="spot-image" src={url1} alt={spot.name} />
+                                    <button className="delete-button" onClick={deleteOneSpot}>delete</button>
                                 </div>
                                 <div className="content">
                                     <div className="spot-city">{spot.city}{`, ${spot.state}`}</div>
