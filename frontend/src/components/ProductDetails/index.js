@@ -57,15 +57,13 @@ function ProductDetail() {
                                             <img className="spot-detail-image5" src={url5} alt={spot.name} />
                                 </div>
                             </div>
-                            <div className="spot-description">
+                            <div className="room-description">
                                 <p><strong>Entire home</strong></p>
                                 <p><strong>Enhanced Clean</strong></p>
                                 <p>This host committed to Airbnb's 5-step enhanced cleaning process.</p>
                                 <p><strong>Self check-in</strong></p>
                                 <p>You can check in with the doorman.</p>
                                 <p><strong>Free cancellation 7 days prior to the check-in date</strong></p>
-                            </div>
-                            <div>
                                 <h3>What this place offers</h3>
                                 <p>Kitchen</p>
                                 <p>Wifi</p>
@@ -75,6 +73,28 @@ function ProductDetail() {
                                 <p>Luggage dropoff allowed</p>
                                 <p>Crib</p>
                                 <p>Hair Dryer</p>
+                            </div>
+                            <div className="booking-form-container">
+                                <form className="booking-form">
+                                    <div className="price">{`${spot.price} / night`}</div>
+                                    <input
+                                        type="date"
+                                        placeholder="CHECK-IN"
+                                        required
+                                    />
+                                    <input
+                                        type="date"
+                                        placeholder="CHECKOUT"
+                                        required
+                                    />
+                                    <select placeholder="GUESTS" value='guestNumber'>
+                                        <option value='1 guest'>1</option>
+                                        <option value='2 guest'>2</option>
+                                        <option value='3 guest'>3</option>
+                                        <option value='4 guest'>4</option>
+                                    </select>
+                                    <button type="submit" className="reserveButton">Reserve</button>
+                                </form>
                             </div>
 
                         </div>
