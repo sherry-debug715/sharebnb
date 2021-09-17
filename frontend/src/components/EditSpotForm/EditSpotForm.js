@@ -42,6 +42,7 @@ const EditSpotForm = () => {
         setUrl5(spot.Images[0]?.url5)
       }
     }, [spot])
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
 
