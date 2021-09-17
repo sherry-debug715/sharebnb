@@ -1,12 +1,45 @@
 .spots-container {
-    display: grid;
-    max-width: 1000;
-    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
-    grid-template-rows: 400px;
-    grid-gap: 20px;
+    display: flex;
+    position: relative;
+    margin: 20px;
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+    cursor: pointer;
+}
+
+.spots-container:hover {
+    opacity: 0.8;
+}
+
+.spots-container > img {
+    height: 200px;
+    width: 350px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .spot-image {
     width: 300px;
     height: 300px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+
+h3 {
+    width: 40vw;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: gray;
+}
+
+.room-price {
+    display: flex;
+    justify-content: space-between;
 }

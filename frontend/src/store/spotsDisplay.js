@@ -27,10 +27,11 @@ const addNewSpot = newSpot => {
     }
 }
 
-const editOneSpot = editSpot => {
+const editOneSpot = (editSpot, imageForEidt) => {
     return {
         type: EDIT_SPOT,
-        editSpot
+        editSpot,
+        imageForEidt
     }
 }
 
@@ -41,8 +42,8 @@ export const editSpotDetails = (spotDetails) => async dispatch => {
     })
     if(response.ok){
       const {spotForEdit, imageForEdit} = await response.json()
-      dispatch(editOneSpot(spotForEdit));
-      dispatch(editOneSpot(imageForEdit));
+      dispatch(editOneSpot(spotForEdit, imageForEdit));
+    //   dispatch(editOneSpot(imageForEdit));
       return {spotForEdit, imageForEdit};
     }
 };
@@ -78,7 +79,6 @@ export const createSpot = addSpot => async dispatch => {
     });
     if (response.ok) {
         const newSpot = await response.json();
-        console.log(newSpot);
         dispatch(addNewSpot(newSpot));
         return newSpot;
     }
@@ -124,14 +124,16 @@ const spotsReducer = (state = initialState, action) => {
             newState = {...state};
             const spotToUpdate = newState.list.find((spot) => spot.id === action.editSpot.id)
 
-            newState.list.map(spot => {
-                if (spot.id === spotToUpdate.id) {
-                    return spot = action.editSpot
-                } else {
-                    return spot
-                }
+            let returnedState = newState.list.map(spot => {
+                    if (spot.id === spotToUpdate.id) {
+                        return action.editSpot
+                    } else {
+                        return spot
+                    }
             })
-            return newState
+            // returnedState.push(action.editSpot);
+            newState.list = returnedState;
+            return newState;
         }
 
         default:

@@ -12,3 +12,6 @@ npx dotenv sequelize db:seed:undo:all
 npx dotenv sequelize db:migrate:undo
 
 npx sequelize-cli model:generate --name Image --attributes spotId:Integer,url1:String,url2:String,url3:String,url4:String,url5:String
+npx sequelize-cli model:generate --name Booking --attributes spotId:Integer,userId:Integer,startDate:Date,endDate:Date,guestNumber:Integer
+
+
