@@ -25,7 +25,7 @@ function ProductDetail() {
     const deleteOneSpot = e => {
         e.preventDefault();
         dispatch(deleteSpot(e.target.value));
-        history.push('./spots')
+        history.push('/spots')
     }
 
     return (
@@ -43,6 +43,7 @@ function ProductDetail() {
                     let url5 = spot?.Images[0]?.url5;
                     return (
                         <div>
+                            <Link to={`/spots/${spot.id}/edit`}> Edit </Link>
                             <h2>{spot.name}</h2>
                             <div className="review">review here <span className="spot-detail-address">{spot.city}{`, ${spot.state}, United State`}</span></div>
                             <div className="grid-container">
@@ -57,7 +58,6 @@ function ProductDetail() {
                             </div>
                             <div className="spot-description">
                                 <p><strong>Entire home</strong></p>
-                                <p>You'll have the treehouse to yourself</p>
                                 <p><strong>Enhanced Clean</strong></p>
                                 <p>This host committed to Airbnb's 5-step enhanced cleaning process.</p>
                                 <p><strong>Self check-in</strong></p>
