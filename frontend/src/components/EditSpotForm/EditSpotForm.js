@@ -15,6 +15,7 @@ const EditSpotForm = () => {
     }, [dispatch]);
 
     const {spotId} = useParams();
+    const spot = spotArray.find(spot => spot.id === +spotId)
     const [city, setCity] = useState("");
     const [state, setState] = useState("");
     const [name, setName] = useState("");
@@ -26,7 +27,21 @@ const EditSpotForm = () => {
     const [url5, setUrl5] = useState('');
     const history = useHistory();
     const userId = useSelector((state) => state.session.user.id);
-    console.log(spotId);
+    // console.log(spotId);
+
+    useEffect(() => {
+      if(spot) {
+        setCity(spot.city);
+        setState(spot.state);
+        setName(spot.name);
+        setPrice(spot.price);
+        setUrl1(spot.Images[0]?.url1)
+        setUrl2(spot.Images[0]?.url2)
+        setUrl3(spot.Images[0]?.url3)
+        setUrl4(spot.Images[0]?.url4)
+        setUrl5(spot.Images[0]?.url5)
+      }
+    }, [spot])
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -47,7 +62,7 @@ const EditSpotForm = () => {
         let editedSpot = dispatch(editSpotDetails(payload))
         // console.log(editedSpot);
 
-        history.push(`/spots/${spotId}`);
+        return history.push(`/spots/${spotId}`);
 
     };
 

@@ -48,7 +48,9 @@ router.post('/', asyncHandler(async(req, res) => {
 // user can edit an spot
 router.put('/:spotId(\\d+)/edit', asyncHandler(async(req, res) => {
     const spotId = +req.params.spotId;
-    const spotForEdit = await Spot.findByPk(spotId);
+    const spotForEdit = await Spot.findByPk(spotId, {
+        include: Image
+    });
     const imageForEdit = await Image.findOne({
         where: {spotId: spotId}
     })

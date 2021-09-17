@@ -47,6 +47,7 @@ function LoginForm() {
             required
           />
         <button type="submit" className="loginButton">Log In</button>
+        <button type="submit" className="loginButton" onClick={e => setCredential('demo@user.io')}>Demo User Log In</button>
       </form>
     </div>
   );
