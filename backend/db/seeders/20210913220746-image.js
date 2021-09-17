@@ -10,32 +10,32 @@ module.exports = {
       */
     return queryInterface.bulkInsert('Images', [
       {
-      spotId: 1,
-      url1: 'https://www.airbnb.com/rooms/49786285?category_tag=Tag%3A8188&adults=1&children=0&infants=0&check_in=2022-01-28&check_out=2022-02-04&previous_page_section_name=1000&federated_search_id=f93f46ee-c5af-4f3e-ab4f-86391ab3fb5f',
-      url2: 'https://www.airbnb.com/rooms/49786285/photos?category_tag=Tag%3A8188&adults=1&children=0&infants=0&check_in=2022-01-28&check_out=2022-02-04&federated_search_id=f93f46ee-c5af-4f3e-ab4f-86391ab3fb5f&source_impression_id=p3_1631573134_uXxdVx8oyXcBm630&heroPhotoId=1178814164',
-      url3: 'https://www.airbnb.com/rooms/49786285/photos?category_tag=Tag%3A8188&adults=1&children=0&infants=0&check_in=2022-01-28&check_out=2022-02-04&federated_search_id=f93f46ee-c5af-4f3e-ab4f-86391ab3fb5f&source_impression_id=p3_1631573134_uXxdVx8oyXcBm630&heroPhotoId=1178814149',
-      url4: 'https://www.airbnb.com/rooms/49786285/photos?category_tag=Tag%3A8188&adults=1&children=0&infants=0&check_in=2022-01-28&check_out=2022-02-04&federated_search_id=f93f46ee-c5af-4f3e-ab4f-86391ab3fb5f&source_impression_id=p3_1631573134_uXxdVx8oyXcBm630&heroPhotoId=1240380351',
-      url5: 'https://a0.muscache.com/im/pictures/prohost-api/Hosting-49786285/original/9e8d4c21-1452-4cb9-99e2-e53a5fcb89aa.jpeg?im_w=1200',
+      spotId: 1, 
+      url1: 'https://a0.muscache.com/im/pictures/miso/Hosting-49786285/original/49917cc0-336a-478c-9b3b-06f498c702a8.jpeg?aki_policy=xx_large',
+      url2: 'https://a0.muscache.com/im/pictures/prohost-api/Hosting-49786285/original/19b0b036-399a-4111-a3f8-35d0f798a25d.jpeg?aki_policy=x_large',
+      url3: 'https://a0.muscache.com/im/pictures/prohost-api/Hosting-49786285/original/07604c51-b6ca-4455-9809-1cf094924e19.jpeg?aki_policy=x_large',
+      url4: 'https://a0.muscache.com/im/pictures/miso/Hosting-49786285/original/be30d820-f8b2-46c7-b0d6-f2d8d342b94a.jpeg?aki_policy=x_large',
+      url5: 'https://a0.muscache.com/im/pictures/prohost-api/Hosting-49786285/original/9e8d4c21-1452-4cb9-99e2-e53a5fcb89aa.jpeg?aki_policy=x_large',
       createdAt: new Date(),
       updatedAt: new Date()
       },
       {
       spotId: 2,
-      url1: 'https://www.airbnb.com/rooms/49051736/photos?category_tag=Tag%3A789&adults=1&check_in=2022-02-26&check_out=2022-03-05&federated_search_id=b14b8f3c-3f4a-442d-bf36-330721902c09&source_impression_id=p3_1631573299_%2BoQBG54rDFP%2Bm%2B4A&guests=1&heroPhotoId=1158185995',
-      url2: 'https://www.airbnb.com/rooms/49051736/photos?category_tag=Tag%3A789&adults=1&check_in=2022-02-26&check_out=2022-03-05&federated_search_id=b14b8f3c-3f4a-442d-bf36-330721902c09&source_impression_id=p3_1631573299_%2BoQBG54rDFP%2Bm%2B4A&guests=1&heroPhotoId=1167642345',
-      url3: 'https://www.airbnb.com/rooms/49051736/photos?category_tag=Tag%3A789&adults=1&check_in=2022-02-26&check_out=2022-03-05&federated_search_id=b14b8f3c-3f4a-442d-bf36-330721902c09&source_impression_id=p3_1631573299_%2BoQBG54rDFP%2Bm%2B4A&guests=1&heroPhotoId=1171389337',
-      url4: 'https://www.airbnb.com/rooms/49051736/photos/1167214158?category_tag=Tag%3A789&adults=1&check_in=2022-02-26&check_out=2022-03-05&federated_search_id=b14b8f3c-3f4a-442d-bf36-330721902c09&source_impression_id=p3_1631573299_%2BoQBG54rDFP%2Bm%2B4A&guests=1',
-      url5: 'https://www.airbnb.com/rooms/49051736/photos/1167642494?category_tag=Tag%3A789&adults=1&check_in=2022-02-26&check_out=2022-03-05&federated_search_id=b14b8f3c-3f4a-442d-bf36-330721902c09&source_impression_id=p3_1631573299_%2BoQBG54rDFP%2Bm%2B4A&guests=1',
+      url1: 'https://a0.muscache.com/im/pictures/a1a38c4c-ace8-4cad-a21d-d92dd0d8bcf6.jpg?im_w=960',
+      url2: 'https://a0.muscache.com/im/pictures/947e2375-a80b-48a1-ab78-4e10780e7f08.jpg?im_w=1200',
+      url3: 'https://a0.muscache.com/im/pictures/047ea21e-08c3-4ac2-91d0-694d7ed63de5.jpg?im_w=1200',
+      url4: 'https://a0.muscache.com/im/pictures/d3de2e39-fa4c-44a6-9cab-73abed7b6330.jpg?im_w=1200',
+      url5: 'https://a0.muscache.com/im/pictures/4f49ff93-2110-496a-b6c2-f43a71d82688.jpg?im_w=1200',
       createdAt: new Date(),
       updatedAt: new Date()
       },
       {
       spotId: 3,
-      url1: 'https://www.airbnb.com/rooms/33878037?check_in=2021-10-05&check_out=2021-10-22&previous_page_section_name=1000&translate_ugc=false&federated_search_id=1e06fa70-a364-4ad5-a007-b94f310ed628',
-      url2: 'https://www.airbnb.com/rooms/33878037/photos?check_in=2021-10-05&check_out=2021-10-22&translate_ugc=false&federated_search_id=1e06fa70-a364-4ad5-a007-b94f310ed628&source_impression_id=p3_1631576615_%2BDXmEeccT5wzjt0Y&heroPhotoId=927863691',
-      url3: 'https://www.airbnb.com/rooms/33878037/photos?check_in=2021-10-05&check_out=2021-10-22&translate_ugc=false&federated_search_id=1e06fa70-a364-4ad5-a007-b94f310ed628&source_impression_id=p3_1631576615_%2BDXmEeccT5wzjt0Y&heroPhotoId=927863704',
-      url4: 'https://www.airbnb.com/rooms/33878037/photos?check_in=2021-10-05&check_out=2021-10-22&translate_ugc=false&federated_search_id=1e06fa70-a364-4ad5-a007-b94f310ed628&source_impression_id=p3_1631576615_%2BDXmEeccT5wzjt0Y&heroPhotoId=927863693',
-      url5: 'https://www.airbnb.com/rooms/33878037/photos?check_in=2021-10-05&check_out=2021-10-22&translate_ugc=false&federated_search_id=1e06fa70-a364-4ad5-a007-b94f310ed628&source_impression_id=p3_1631576615_%2BDXmEeccT5wzjt0Y&heroPhotoId=927863697',
+      url1: 'https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-33878037-unapproved/original/66b12555-3f5c-4f08-bb89-39f8cf8c5eeb.JPEG?aki_policy=xx_large',
+      url2: 'https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-33878037-unapproved/original/28f83061-c0ad-42a4-bc8b-23c00f9068b0.JPEG?aki_policy=x_large',
+      url3: 'https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-33878037-unapproved/original/73ea9c6e-c2dd-457c-94a4-40a72a05af90.JPEG?aki_policy=x_large',
+      url4: 'https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-33878037-unapproved/original/9a5679af-e391-4313-83e3-a81a43aa1d09.JPEG?aki_policy=x_large',
+      url5: 'https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-33878037-unapproved/original/f068769b-1284-4efd-a4ea-6fce47dd7087.JPEG?aki_policy=x_large',
       createdAt: new Date(),
       updatedAt: new Date()
       }

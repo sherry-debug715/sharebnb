@@ -12,18 +12,23 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       url1: {
+        allowNull: false,
         type: Sequelize.STRING(1000)
       },
       url2: {
+        allowNull: false,
         type: Sequelize.STRING(1000)
       },
       url3: {
+        allowNull: false,
         type: Sequelize.STRING(1000)
       },
       url4: {
+        allowNull: false,
         type: Sequelize.STRING(1000)
       },
       url5: {
+        allowNull: false,
         type: Sequelize.STRING(1000)
       },
       createdAt: {

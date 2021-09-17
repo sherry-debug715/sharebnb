@@ -11,7 +11,6 @@ module.exports = {
       userId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        unique: true
       },
       city: {
         allowNull: false,
@@ -31,10 +30,12 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
+        defaultValue: Sequelize.fn('now'),
         type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
+        defaultValue: Sequelize.fn('now'),
         type: Sequelize.DATE
       }
     });
