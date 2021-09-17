@@ -4,7 +4,7 @@ const LOAD =  'spots/LOAD';
 const SPOT_DETAIL = 'spots/SPOT_DETAI'
 const ADD_SPOT = 'spots/ADD_SPOT';
 const REMOVE_SPOT = 'spots/REMOVE_SPOT';
-
+const EDIT_SPOT = 'spots/EDIT_SPOT';
 
 const load = list => {
     return{
@@ -27,6 +27,25 @@ const addNewSpot = newSpot => {
     }
 }
 
+const editOneSpot = editSpot => {
+    return {
+        type: EDIT_SPOT,
+        editSpot
+    }
+}
+
+export const editSpotDetails = (spotDetails) => async dispatch => {
+    const response = await csrfFetch(`/api/spots/${spotDetails.id}/edit`, {
+      method: 'PUT',
+      body: JSON.stringify(spotDetails)
+    })
+    if(response.ok){
+      const {spotForEdit, imageForEdit} = await response.json()
+      dispatch(editOneSpot(spotForEdit));
+      dispatch(editOneSpot(imageForEdit));
+      return {spotForEdit, imageForEdit};
+    }
+};
 
 export const deleteSpot = (spotId) => async dispatch => {
     const response = await csrfFetch(`/api/spots/${spotId}`, {
@@ -35,9 +54,9 @@ export const deleteSpot = (spotId) => async dispatch => {
     })
     if(response.ok){
         const {refreshedSpots, refreshedImages} = await response.json();
-        getSpots();
-        // dispatch(getSpots(refreshedSpots));
-        // dispatch(getSpots(refreshedImages));
+        // getSpots();
+        dispatch(getSpots(refreshedSpots));
+        dispatch(getSpots(refreshedImages));
         return 'deleted';
     }
 };
@@ -70,6 +89,7 @@ const initialState = {
 }
 
 const spotsReducer = (state = initialState, action) => {
+    let newState;
     switch (action.type) {
         case LOAD: {
             const allSpots = action.list;
@@ -81,7 +101,7 @@ const spotsReducer = (state = initialState, action) => {
 
         case ADD_SPOT: {
             if (!state[action.newSpot.id]) {
-              let newState = {
+               newState = {
                 ...state,
                 [action.newSpot.id]: action.newSpot
               };
@@ -98,6 +118,20 @@ const spotsReducer = (state = initialState, action) => {
                 ...action.newSpot,
               }
             };
+        }
+
+        case EDIT_SPOT: {
+            newState = {...state};
+            const spotToUpdate = newState.list.find((spot) => spot.id === action.editSpot.id)
+
+            newState.list.map(spot => {
+                if (spot.id === spotToUpdate.id) {
+                    return spot = action.editSpot
+                } else {
+                    return spot
+                }
+            })
+            return newState
         }
 
         default:
