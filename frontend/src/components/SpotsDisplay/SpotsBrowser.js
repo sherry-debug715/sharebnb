@@ -42,7 +42,7 @@ const SpotsBrowser = () => {
                                     <img className="spot-image" src={url1} alt={spot.name} />
                                 </div>
                                 <div className="content">
-                                    <div className="spot-city">{spot.city}{`, ${spot.state}`}</div>
+                                    <h3 className="spot-city">{spot.city}{`, ${spot.state}`}</h3>
                                     <div className="room-price">{`$${spot.price} / night`}</div>
                                 </div>
                             </div>

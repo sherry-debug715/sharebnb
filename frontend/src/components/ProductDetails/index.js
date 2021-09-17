@@ -2,7 +2,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom';
 import { deleteSpot, getSpots } from '../../store/spotsDisplay';
+// import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import './spotDetail.css';
+// import StarIcon from "@material-ui/icons/Star";
 
 function ProductDetail() {
 
@@ -30,7 +32,6 @@ function ProductDetail() {
 
     return (
         <>
-        <h1>This is Product Detail Page</h1>
         <div className="spot-detail-wrapper">
             <button value={spotId} className="delete-button" onClick={deleteOneSpot}>delete</button>
             {spots.map(spot => {
