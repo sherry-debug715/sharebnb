@@ -1,0 +1,12 @@
+  .fab {
+      margin: 30px;
+  }
+
+  .fab.is-hidden {
+    transform: scale(0);
+  }
+
+  .fab span {
+    transition: transform 0.5s;
+  }
+
