@@ -8,7 +8,7 @@ router.get('/',  asyncHandler(async(req, res) => {
     const booking = await Booking.findAll({
         include: Spot
     })
-    res.json(booking);
+    return res.json(booking);
 }));
 
 router.post('/', asyncHandler(async(req, res) => {

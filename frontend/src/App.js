@@ -8,9 +8,9 @@ import SpotsBrowser from "./components/SpotsDisplay/SpotsBrowser";
 import LandingPage from "./components/LandingPage";
 import ProductDetail from "./components/ProductDetails";
 import EditSpotForm from "./components/EditSpotForm/EditSpotForm";
+import BookingDetail from "./components/BookingDetail/bookingDetail";
 
 function App() {
-
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
@@ -36,6 +36,9 @@ function App() {
           </Route>
           <Route exact path="/spots/:spotId/edit">
             <EditSpotForm />
+          </Route>
+          <Route exact path="/spots/:bookingId">
+            <BookingDetail />
           </Route>
         </Switch>
       )}

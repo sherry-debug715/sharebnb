@@ -1,20 +1,25 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom';
 import { deleteSpot, getSpots } from '../../store/spotsDisplay';
 // import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import './spotDetail.css';
+import { createBooking } from '../../store/bookingStore';
 // import StarIcon from "@material-ui/icons/Star";
 
 function ProductDetail() {
-
     const dispatch = useDispatch();
     const { spotId } = useParams();
+    const history = useHistory();
+    const currentUser = useSelector((state) => state.session.user);
     const spots = useSelector(state => {
         return state.spot.list;
     });
 
-    const history = useHistory();
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
+    const [guestNumber, setGuestNumber] = useState(1)
+
 
     useEffect(() => {
         dispatch(getSpots());
@@ -28,6 +33,31 @@ function ProductDetail() {
         e.preventDefault();
         dispatch(deleteSpot(e.target.value));
         history.push('/spots')
+    }
+
+    const reset = () => {
+        setStartDate(new Date());
+        setEndDate(new Date());
+        setGuestNumber(1);
+    }
+
+    const bookingFormSubmit = async(e) => {
+        e.preventDefault();
+
+        let createdBooking = {
+            userId: currentUser?.id,
+            spotId,
+            startDate,
+            endDate,
+            guestNumber
+        }
+
+        const newBooking = await dispatch(createBooking(createdBooking));
+
+        if(newBooking) {
+            return history.push(`/spots/${newBooking.id}`)
+        }
+        reset();
     }
 
     return (
@@ -75,23 +105,33 @@ function ProductDetail() {
                                 <p>Hair Dryer</p>
                             </div>
                             <div className="booking-form-container">
-                                <form className="booking-form">
+                                <form
+                                    className="booking-form"
+                                    onSubmit={bookingFormSubmit}
+                                >
                                     <div className="price">{`${spot.price} / night`}</div>
                                     <input
                                         type="date"
                                         placeholder="CHECK-IN"
+                                        value={startDate}
+                                        onChange={(e) => setStartDate(e.target.value)}
                                         required
                                     />
                                     <input
                                         type="date"
                                         placeholder="CHECKOUT"
+                                        value={endDate}
+                                        onChange={e => setEndDate(e.target.value)}
                                         required
                                     />
-                                    <select placeholder="GUESTS" value='guestNumber'>
-                                        <option value='1 guest'>1</option>
-                                        <option value='2 guest'>2</option>
-                                        <option value='3 guest'>3</option>
-                                        <option value='4 guest'>4</option>
+                                    <select
+                                        value={guestNumber}
+                                        onChange={e => setGuestNumber(e.target.value)}
+                                    >
+                                        <option selected value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
                                     </select>
                                     <button type="submit" className="reserveButton">Reserve</button>
                                 </form>
@@ -107,4 +147,3 @@ function ProductDetail() {
 }
 
 export default ProductDetail;
-

@@ -1,6 +1,7 @@
 import { csrfFetch } from './csrf';
 
 const NEW_BOOKING = 'booking/NEW_BOOKING';
+const BOOKING_DETAIL = 'booking/BOOKING_DETAIL'
 
 const addNewBooking = newBooking => {
     return {
@@ -8,6 +9,22 @@ const addNewBooking = newBooking => {
         newBooking
     }
 }
+
+const bookingDisplay = bookingDetail => {
+    return {
+        type:BOOKING_DETAIL,
+        bookingDetail
+    }
+}
+
+export const getBookings = () => async dispatch => {
+    const response = await csrfFetch(`/api/booking`);
+
+    if (response.ok) {
+      const bookings = await response.json();
+      dispatch(bookingDisplay(bookings));
+    }
+};
 
 export const createBooking = addBooking => async dispatch => {
     const response = await csrfFetch(`/api/booking`, {
@@ -23,7 +40,7 @@ export const createBooking = addBooking => async dispatch => {
 }
 
 const initialState = {
-    newBooking: []
+    newBooking: [] // newBooking is all of the bookings
 }
 
 const bookingReducer = (state = initialState, action) => {
@@ -47,6 +64,13 @@ const bookingReducer = (state = initialState, action) => {
                  ...state[action.newBooking.id],
                  ...action.newBooking,
                }
+            };
+        }
+
+        case BOOKING_DETAIL: {
+            const allBookings = action.bookingDetail;
+            return {
+                newBooking: allBookings
             };
         }
 
