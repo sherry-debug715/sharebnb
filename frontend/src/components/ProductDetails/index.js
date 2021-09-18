@@ -16,14 +16,24 @@ function ProductDetail() {
         return state.spot.list;
     });
 
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
-    const [guestNumber, setGuestNumber] = useState(1)
+    const [startDate, setStartDate] = useState(false);
+    const [endDate, setEndDate] = useState(false);
+    const [guestNumber, setGuestNumber] = useState(1);
+    const [dayDiff, setDayDiff] = useState(1);
 
 
     useEffect(() => {
         dispatch(getSpots());
     }, [dispatch]);
+
+    useEffect(() => {
+        if(endDate && startDate) {
+            let startDay = new Date(startDate);
+            let endDay = new Date(endDate);
+            let diffDays = endDay.getDate() - startDay.getDate();
+            setDayDiff(diffDays);
+        }
+    }, [endDate, startDate]);
 
     if (!spots) {
         return null;
@@ -36,8 +46,8 @@ function ProductDetail() {
     }
 
     const reset = () => {
-        setStartDate(new Date());
-        setEndDate(new Date());
+        setStartDate(false);
+        setEndDate(false);
         setGuestNumber(1);
     }
 
@@ -55,17 +65,24 @@ function ProductDetail() {
         const newBooking = await dispatch(createBooking(createdBooking));
 
         if(newBooking) {
-            return history.push(`/spots/${newBooking.id}`)
+            return history.push(`/spots`)
         }
         reset();
     }
+
+    // console.log("==============>", endDate)
+    // const checkoutDay = endDate.split("-");
+    // const checkoutDay = endDate.split("-").join("")
+    // console.log("==============>", Number(checkoutDay)-Number(checkinDay));
+
+
 
     return (
         <>
         <div className="spot-detail-wrapper">
             <button value={spotId} className="delete-button" onClick={deleteOneSpot}>delete</button>
             {spots.map(spot => {
-                // console.log("this is spot.id=========>"+ spot.id)
+                const roomCharge = spot.price * dayDiff;
                 if(spotId == spot.id) {
                     // console.log("I'm inside spot.id 1")
                     let url2 = spot?.Images[0]?.url2;
@@ -133,6 +150,13 @@ function ProductDetail() {
                                         <option value="3">3</option>
                                         <option value="4">4</option>
                                     </select>
+                                    <p>Price detail</p>
+                                    <div>
+                                        <p>{`$${spot.price} x  ${dayDiff} nights`}</p>
+                                        <p>Cleaning fee<span>{`$${roomCharge*0.1}`}</span></p>
+                                        <p>Service fee<span>{`$${roomCharge*0.15}`}</span></p>
+                                        <p>Total(USD)<span>{`$${(roomCharge*0.25)+(spot.price*dayDiff)}`}</span></p>
+                                    </div>
                                     <button type="submit" className="reserveButton">Reserve</button>
                                 </form>
                             </div>
