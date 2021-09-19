@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
+import { Link } from "react-router-dom";
 import * as sessionActions from '../../store/session';
 // import Fab from "../SpotsDisplay/Fab";
 
@@ -36,11 +37,10 @@ function ProfileButton({ user }) {
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
+          <Link to={`/${user.id}/profile`}>Go to profile</Link>
+          <div>{user.email}</div>
           <li>
             <button onClick={logout}>Log Out</button>
-            {/* <Fab hidden={showForm} onClick={() => setShowForm(true)} /> */}
           </li>
         </ul>
       )}

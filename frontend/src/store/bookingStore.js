@@ -1,7 +1,9 @@
 import { csrfFetch } from './csrf';
 
 const NEW_BOOKING = 'booking/NEW_BOOKING';
-const BOOKING_DETAIL = 'booking/BOOKING_DETAIL'
+const BOOKING_DETAIL = 'booking/BOOKING_DETAIL';
+const DELETE_BOOKING = 'booking/DELETE_BOOKING';
+const EDIT_BOOKING = 'booking/EDIT_BOOKING';
 
 const addNewBooking = newBooking => {
     return {
@@ -16,6 +18,36 @@ const bookingDisplay = bookingDetail => {
         bookingDetail
     }
 }
+
+const deleteABooking = deleteBooking => {
+    return {
+        type: DELETE_BOOKING,
+        deleteBooking
+    }
+}
+
+const editABooking = editBooking => {
+    return {
+        type: EDIT_BOOKING,
+        editBooking
+    }
+}
+
+export const editBookings = (bookingObj) => async dispatch => {
+
+    const response = await csrfFetch(`/api/booking/${bookingObj.id}/edit`, {
+        method: 'PUT',
+        body: JSON.stringify(bookingObj)
+    })
+
+    if(response.ok) {
+        const {bookingForEdit} = await response.json()
+        // console.log(bookingForEdit);
+        dispatch(editABooking(bookingForEdit));
+        // return {bookingForEdit}
+    }
+    console.log("editing route======================")
+};
 
 export const getBookings = () => async dispatch => {
     const response = await csrfFetch(`/api/booking`);
@@ -36,6 +68,18 @@ export const createBooking = addBooking => async dispatch => {
         const newBooking = await response.json();
         dispatch(addNewBooking(newBooking));
         return newBooking;
+    }
+}
+
+export const removeBooking = bookingId => async dispatch => {
+    const response = await csrfFetch(`/api/booking/${bookingId}`, {
+        method: 'DELETE',
+        body: JSON.stringify({bookingId})
+    })
+    if(response.ok) {
+        const {refreshedProfile} = await response.json();
+        dispatch(bookingDisplay(refreshedProfile));
+        return 'deleted';
     }
 }
 
@@ -72,6 +116,21 @@ const bookingReducer = (state = initialState, action) => {
             return {
                 newBooking: allBookings
             };
+        }
+
+        case EDIT_BOOKING: {
+            newState = {...state};
+            const bookingToUpdate = newState.newBooking.find((booking) => booking.id === action.editBooking.id)
+
+            let returnedState = newState.newBooking.map(booking => {
+                    if (booking.id === bookingToUpdate.id) {
+                        return action.editBooking
+                    } else {
+                        return booking
+                    }
+            })
+            newState.newBooking = returnedState;
+            return newState;
         }
 
         default:

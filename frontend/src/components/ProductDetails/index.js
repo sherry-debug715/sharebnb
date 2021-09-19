@@ -70,13 +70,6 @@ function ProductDetail() {
         reset();
     }
 
-    // console.log("==============>", endDate)
-    // const checkoutDay = endDate.split("-");
-    // const checkoutDay = endDate.split("-").join("")
-    // console.log("==============>", Number(checkoutDay)-Number(checkinDay));
-
-
-
     return (
         <>
         <div className="spot-detail-wrapper">
@@ -157,7 +150,7 @@ function ProductDetail() {
                                         <p>Service fee<span>{`$${roomCharge*0.15}`}</span></p>
                                         <p>Total(USD)<span>{`$${(roomCharge*0.25)+(spot.price*dayDiff)}`}</span></p>
                                     </div>
-                                    <button type="submit" className="reserveButton">Reserve</button>
+                                    <button type="submit" className="reserveButton">Comfirm Booking</button>
                                 </form>
                             </div>
 
