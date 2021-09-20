@@ -7,7 +7,6 @@ import './Navigation.css';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
-
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
@@ -25,10 +24,25 @@ function Navigation({ isLoaded }){
   return (
     <section>
       <header>
-        <a href="/" ><img src="" className="logo"/></a>
+        <NavLink exact to="/" ><img
+          src="https://i.pinimg.com/originals/3c/bf/be/3cbfbe148597341fa56f2f87ade90956.png"
+          alt="airBnB logo"
+          className="header-logo"
+        />
+        </NavLink>
+        <div className="search-bar">
+          <textarea
+            className="search"
+            placeholder="Start your search"
+          />
+        </div>
         <ul>
           <li className="navigation">
-            <NavLink exact to="/">Home</NavLink>
+            <NavLink
+              className="home-link"
+              exact to="/">
+                Home
+            </NavLink>
             {isLoaded && sessionLinks}
           </li>
         </ul>

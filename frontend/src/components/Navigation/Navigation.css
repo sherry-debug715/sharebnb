@@ -1,16 +1,19 @@
-section {
-    position: relative;
+section{
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 header {
-    width: 100%;
-    padding: 20px 100px;
-    display: flex;
+    box-align:center;
+    box-pack: justify;
     justify-content: space-between;
     align-items: center;
+    display: flex;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    margin: 0 auto;
 }
 
 header .logo {
@@ -38,4 +41,52 @@ a {
 .navigation button {
     margin-left: 35px;
     padding: 3px;
+}
+
+.header-logo {
+    object-fit: contain;
+    height: 100px;
+    margin-left: 20px;
+}
+
+.search {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding: 10px;
+    height: 30px;
+    border: 1px solid lightgray;
+    border-radius: 999px;
+    outline: none;
+    outline-width: 0;
+    width: 350px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 15vw;
+    margin-right: 80px;
+}
+
+.home-link {
+    color: #ff7779;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    list-style: none;
+    background-color: rgb(244, 57, 57);
+    border: 1px solid rgb(244, 57, 57);
+    backdrop-filter: blur(0.2);
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    padding: 10px;
+    z-index: 10;
+
 }

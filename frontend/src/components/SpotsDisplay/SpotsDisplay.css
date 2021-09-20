@@ -43,3 +43,74 @@ h3 {
     display: flex;
     justify-content: space-between;
 }
+
+.spots-buttons-container {
+    -webkit-box-pack: justify;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.spots-buttons-container2 {
+    -webkit-box-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.individual-button-container1 {
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+.individual-button-container2 {
+    position: relative;
+}
+
+.individual-button-container3 {
+    display: inline-block;
+    white-space: nowrap;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.spots-buttons-span1 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.individual-button-container4 {
+    display: flex;
+    place-content: center;
+}
+
+.spots-buttons-span2 {
+    display: inline-block;
+}
+
+
+
+.spots-buttons {
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid rgb(176,176,176);
+    background-color: white;
+    outline: none;
+    margin: 0px;
+    border-radius: 30px;
+    color: rbg(34, 34, 34);
+    position: relative;
+    padding: 8px 16px;
+    font-size: 12px;
+    line-height: 16px;
+    transition-duration: .2s;
+}
+
+.spots-buttons:hover {
+    border: 1px solid black;
+}
+
+.spots-buttons:active {
+    border: 2px solid black;
+}

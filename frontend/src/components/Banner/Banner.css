@@ -1,0 +1,40 @@
+.banner-container {
+    background: url("https://a0.muscache.com/im/pictures/57b9f708-bb12-498c-bc33-769f8fc43e63.jpg?im_w=2560") center center;
+    height: 50vh;
+    position: relative;
+    background-size:contain;
+    width: 90%;
+    display: flex;
+
+}
+
+.banner_info {
+    background-color: black;
+    color: white;
+    padding-top: 25vh;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 40px;
+    width: 300px;
+}
+
+.redirect-button {
+    background-color: #ff7779;
+    color: white;
+    text-transform: inherit;
+    margin-top: 20px;
+    font-weight: 600;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ff7779;
+    transition-duration: 0.3s;
+}
+
+.redirect-button:hover {
+    background-color: white;
+    color: #ff7779;
+}
+
+.text1 {
+    margin-top: 10px;
+}

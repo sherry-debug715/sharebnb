@@ -32,7 +32,7 @@ function UserProfile() {
     return (
         <>
         <h1>Hi, I'm {currentUser.username}</h1>
-        <Link to={`/${currentUser.id}/profile`}>Edit profile</Link>
+        <p>{currentUser.email}</p>
         <section>
             <table>
                     <tr>
