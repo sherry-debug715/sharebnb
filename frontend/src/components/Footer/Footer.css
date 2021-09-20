@@ -1,4 +1,6 @@
 .footer {
+    display: flex;
+    flex-direction: column;
     border-top: 1px solid lightgray;
     padding: 10px;
     background-color: #f7f7f7;
@@ -6,8 +8,6 @@
     font-size: 14px;
     color: #222222;
     font-weight: 300;
-
-
 }
 
 .footer > p {
@@ -18,3 +18,5 @@
 .designer {
     font-weight: 400;
 }
+
+
