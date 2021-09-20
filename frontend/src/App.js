@@ -11,8 +11,10 @@ import EditSpotForm from "./components/EditSpotForm/EditSpotForm";
 import UserProfile from "./components/UserProfile/userProfile";
 import EditBookingForm from "./components/EditBookingForm/editBooking";
 import Footer from "./components/Footer/Footer";
+import CreateSpotForm from "./components/SpotsDisplay/CreateSpotForm";
 
 function App() {
+
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {

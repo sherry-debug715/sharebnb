@@ -31,7 +31,8 @@ function Navigation({ isLoaded }){
         />
         </NavLink>
         <div className="search-bar">
-          <textarea
+          <input
+            type="search"
             className="search"
             placeholder="Start your search"
           />

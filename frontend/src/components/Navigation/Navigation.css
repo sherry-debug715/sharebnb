@@ -79,8 +79,8 @@ a {
     top: 4rem;
     right: 2rem;
     list-style: none;
-    background-color: rgb(244, 57, 57);
-    border: 1px solid rgb(244, 57, 57);
+    background-color:#ff7779;
+    border: 1px solid #ff7779;
     backdrop-filter: blur(0.2);
     border-radius: 4px;
     color: white;
