@@ -36,6 +36,33 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        userId: 4,
+        city: 'Ottsville',
+        state: 'Pennsylvania',
+        name: 'The Roost, Strawbale Construction',
+        price: 125,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        userId: 5,
+        city: 'Andover',
+        state: 'New Jersey',
+        name: 'Little Red Cabin',
+        price: 66,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        userId: 6,
+        city: 'Putney',
+        state: 'Vermont',
+        name: 'PET FRIENDLY, PRIVATE & PEACEFUL',
+        price: 123,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ], {});
   },
 
