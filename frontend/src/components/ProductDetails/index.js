@@ -99,21 +99,30 @@ function ProductDetail() {
                                     <div className="grid3">
                                         <div className="room-description">
                                             <div className="room-description1">
-                                                <p><strong>Entire home</strong></p>
-                                                <p><strong>Enhanced Clean</strong></p>
-                                                <p>This host committed to Airbnb's 5-step enhanced cleaning process.</p>
-                                                <p><strong>Self check-in</strong></p>
-                                                <p>You can check in with the doorman.</p>
-                                                <p><strong>Free cancellation 7 days prior to the check-in date</strong></p>
-                                                <h3>What this place offers</h3>
-                                                <p>Kitchen</p>
-                                                <p>Wifi</p>
-                                                <p>Free parking on premises</p>
-                                                <p>Shared patio or balcony</p>
-                                                <p>Indoor fireplace</p>
-                                                <p>Luggage dropoff allowed</p>
-                                                <p>Crib</p>
-                                                <p>Hair Dryer</p>
+                                                <div className="divider-1">
+                                                    <div className="text-wrapper">
+                                                        <h5>Entire home</h5>
+                                                        <p className="diver-1-text">You'll have the guesthouse to yourself</p>
+                                                    </div>
+                                                    <div className="text-wrapper">
+                                                        <h5>Enhanced Clean</h5>
+                                                        <p className="diver-1-text">This host committed to Airbnb's 5-step enhanced cleaning process.</p>
+                                                    </div>
+                                                    <div className="text-wrapper">
+                                                        <h5>Self check-in</h5>
+                                                        <p className="diver-1-text">Free cancellation 7 days prior to the check-in date</p>
+                                                    </div>
+                                                </div>
+                                                <div className="divider-2">
+                                                    <h2 className="offer-list-title">What this place offers</h2>
+                                                    <div className="offer-list">
+                                                            <p className="text1-wrapper">Kitchen</p>
+                                                            <p className="text1-wrapper">Wifi</p>
+                                                            <p className="text1-wrapper">Free parking on premises</p>
+                                                            <p className="text1-wrapper">Hair Dryer</p>
+
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="booking-form-container">
