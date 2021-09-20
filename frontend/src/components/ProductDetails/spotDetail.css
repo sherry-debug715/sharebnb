@@ -1,4 +1,34 @@
-.spot-detail-image {
-    height: 300px;
-    width: 300px;
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.display-container {
+    display:grid;
+    max-width: 1000px;
+    grid-template-rows: 10% 2fr auto;
+}
+
+img {
+    width: 500px;
+    height: 400px;
+    border: 10px solid white;
+}
+
+.grid3 {
+    display: grid;
+    grid-template-columns: 50% auto;
+}
+
+.room-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.booking-form-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
 }
