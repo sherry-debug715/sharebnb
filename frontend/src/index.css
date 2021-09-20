@@ -1,12 +1,9 @@
 /* TODO Add site wide styles */
-* {
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
 
 #root {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: #484848;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
 }

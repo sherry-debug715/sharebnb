@@ -1,5 +1,7 @@
   .fab {
-      margin: 30px;
+    position:relative;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
   }
 
   .fab.is-hidden {
@@ -9,4 +11,3 @@
   .fab span {
     transition: transform 0.5s;
   }
-

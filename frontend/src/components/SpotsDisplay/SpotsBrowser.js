@@ -31,9 +31,85 @@ const SpotsBrowser = () => {
         <main>
            <div className="spots-page">
                <Fab hidden={showForm} onClick={() => setShowForm(true)} />
+               <div className="spots-buttons-container">
+                   <div className="spots-buttons-container2">
+                        <div className="individual-button-container1">
+                            <div className="individual-button-container2">
+                                <div className="individual-button-container3">
+                                    <button className="spots-buttons">
+                                        <span className="spots-buttons-span1">
+                                            <div className="individual-button-container4">
+                                                <span className="spots-buttons-span2">Free cancellation</span>
+                                            </div>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <div className="spots-buttons-container2">
+                        <div className="individual-button-container1">
+                            <div className="individual-button-container2">
+                                <div className="individual-button-container3">
+                                    <button className="spots-buttons">
+                                        <span className="spots-buttons-span1">
+                                            <div className="individual-button-container4">
+                                                <span className="spots-buttons-span2">Entire place</span>
+                                            </div>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <div className="spots-buttons-container2">
+                        <div className="individual-button-container1">
+                            <div className="individual-button-container2">
+                                <div className="individual-button-container3">
+                                    <button className="spots-buttons">
+                                        <span className="spots-buttons-span1">
+                                            <div className="individual-button-container4">
+                                                <span className="spots-buttons-span2">Price</span>
+                                            </div>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <div className="spots-buttons-container2">
+                        <div className="individual-button-container1">
+                            <div className="individual-button-container2">
+                                <div className="individual-button-container3">
+                                    <button className="spots-buttons">
+                                        <span className="spots-buttons-span1">
+                                            <div className="individual-button-container4">
+                                                <span className="spots-buttons-span2">Rooms and beds</span>
+                                            </div>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <div className="spots-buttons-container2">
+                        <div className="individual-button-container1">
+                            <div className="individual-button-container2">
+                                <div className="individual-button-container3">
+                                    <button className="spots-buttons">
+                                        <span className="spots-buttons-span1">
+                                            <div className="individual-button-container4">
+                                                <span className="spots-buttons-span2">More filters</span>
+                                            </div>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
                {spots.map(spot => {
                   let url1 = spot?.Images[0]?.url1;
-                //   console.log("url1=>------------" + url1);
                     return(
                         <div className="spots-container" key={spot.id}>
                             <Link to={`/spots/${spot.id}`} >

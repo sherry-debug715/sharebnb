@@ -8,9 +8,11 @@ import SpotsBrowser from "./components/SpotsDisplay/SpotsBrowser";
 import LandingPage from "./components/LandingPage";
 import ProductDetail from "./components/ProductDetails";
 import EditSpotForm from "./components/EditSpotForm/EditSpotForm";
+import UserProfile from "./components/UserProfile/userProfile";
+import EditBookingForm from "./components/EditBookingForm/editBooking";
+import Footer from "./components/Footer/Footer";
 
 function App() {
-
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
@@ -22,9 +24,6 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route exact path="/">
-            <LandingPage />
-          </Route>
           <Route exact path="/spots/:spotId">
             <ProductDetail />
           </Route>
@@ -37,8 +36,18 @@ function App() {
           <Route exact path="/spots/:spotId/edit">
             <EditSpotForm />
           </Route>
+          <Route exact path="/:userId/profile">
+            <UserProfile />
+          </Route>
+          <Route exact path="/profile/:bookingId/edit">
+            <EditBookingForm />
+          </Route>
+          <Route exact path="/">
+            <LandingPage />
+          </Route>
         </Switch>
       )}
+      <Footer isLoaded={isLoaded} />
     </>
   );
 }
